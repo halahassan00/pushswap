@@ -6,7 +6,7 @@
 /*   By: hhassan <hala.hassan@learner.42.tech>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 21:19:17 by hahassan          #+#    #+#             */
-/*   Updated: 2026/03/22 19:18:10 by hhassan          ###   ########.fr       */
+/*   Updated: 2026/03/29 22:47:11 by hhassan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,10 @@ void	chunk_sort(t_stack *a, t_stack *b, t_bench *bench)
 	init_chunk(&chunk, i);
 	i = 0;
 	size = a->size;
+    if (num_of_chunks * chunk.chunk_size < size)
+    {
+        num_of_chunks++;
+    }
 	while (i < num_of_chunks)
 	{
 		push_chunks(a, b, bench, &chunk);
